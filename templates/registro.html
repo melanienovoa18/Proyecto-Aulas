@@ -9,11 +9,34 @@
 
     <h1>Registro</h1>
     <br>
-    <h3>AQUI VA EL FORM</h3>
+    <form action="" method="POST">
+        Nombre del evento: <input type="text" name="Nombre_evento" id="idNombre_evento" required>
+        <br><br>
+        Tipo de Evento: <input type="text" name="Tipo_evento" id="idTipo_evento" required>
+        <br><br>
+        Fecha inicio del evento: <input type="date" name="Fecha_inicio" id="idFecha_inicio" required>
+        <br><br>
+        Fecha final del evento: <input type="date" name="Fecha_final" id="idFecha_final" required>
+        <br><br>
+        Hora inicio del evento: <input type="time" name="Hora_inicio" id="idHora_inicio" required>
+        <br><br>
+        Hora final del evento: <input type="time" name="Hora_final" id="idHora_final" required>
+        <br><br>
+        Fecha de reservacion: <input type="date" name="Fecha_reservacion" id="idFecha_reservacion" required>
+        <br><br>
+        Nombre empresa: <input type="text" name="Nombre_empresa" id="idNombre_empresa" required>
+        <br><br>
+        Nombre encargado: <input type="text" name="Nombre_encargado" id="idNombre_encargado" required>
+        <br><br>
+        
+        <input type="submit" value="Terminar registro">
+        <a href="/inicio"><input type="button" value="Cancelar"></a>
+        
     <br>
-     <a href="/reservaciones">Realizar una reservacion</a> -->
-    <br>
-    <a href="/">pagina de inicio</a>
+    </form>
+
+    <br><a href="/reservaciones">Realizar una reservacion</a>
+    <br><a href="/">pagina de inicio</a>
 {% endblock content %}
 
 
