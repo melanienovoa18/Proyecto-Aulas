@@ -1,0 +1,36 @@
+{% extends 'Base.html' %}
+{% block head %}
+    <title>Registro</title>
+{% endblock head %}
+
+{% block content %}
+    <h1>Registro</h1>
+    <br>
+    <form action="" method="POST">
+        Nombre Empresa: 
+        <input type="text" name="nombre_empresa" id="idNombre_empresa" required>
+        <br><br>
+        Giro de la empresa: 
+        <input type="text" name="giro" id="giro" required>
+        <br><br>
+        NIT: 
+        <input type="INT" name="NIT" id="NIT" required>
+        <br><br>
+        Numero de registro: 
+        <input type="INT" name="num_registro" id="num_registro" required>
+        <br><br>
+        Correo: 
+        <input type="email" name="email" id="idEmail" required>
+        <br><br>
+        Nombre representante legal: 
+        <input type="text" name="Nombre_encargado" id="idNombre_encargado" required>
+        <br><br>
+        <input type="submit" value="Finalizar">
+        <br>
+    </form>
+    <br><br>
+    <a href="/reservaciones"><input type="button" value="Realizar una reservacion"></a>
+    <a href="/cancelar"><input type="button" value="Cancelar"></a>
+{% endblock content %}
+
+
