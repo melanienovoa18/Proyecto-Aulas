@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from MethodUtil import MethodUtil
 from UserLogic import UserLogic
+from CardLogic import CardLogic
+from CardObj import CardObj
 app = Flask(__name__)
 
 @app.route("/")
@@ -53,9 +55,24 @@ def extras():
 def tipo_pago():
     return render_template("tipo_pago.html")
 
-@app.route("/info_tarjeta")
+@app.route("/info_tarjeta", methods=MethodUtil.list_ALL())
 def info_tarjeta():
-    return render_template("info_tarjeta.html")
+    if request.method == "GET":
+        return render_template("info_tarjeta.html",)
+    if request.method == "POST":
+        numero_tarjeta = request.form["numero_tarjeta"]
+        mes_vencimiento = request.form["mes_vencimiento"]
+        anos_vencimiento = request.form["anos_vencimiento"]
+        CCV = request.form["CCV"] 
+        logic = CardLogic()
+        confirmation = logic.insertCard(
+            "numero_tarjeta",
+            "mes_vencimiento",
+            "anos_vencimiento",
+            "CCV"
+            )
+        if confirmation is True:
+            return redirect(url_for("info_tarjeta.html"))
 
 @app.route("/cancelar")
 def cancelar():
