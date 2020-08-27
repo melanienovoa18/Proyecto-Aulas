@@ -1,19 +1,34 @@
-from flask import Flask, render_template
-from flask_mysqldb import MySQL
-
+from flask import Flask, render_template, request, session
+from MethodUtil import MethodUtil
+from UserLogic import UserLogic
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '12345'
-app.config['MYSQL_DB'] = 'reservas_evento'
-
-mysql = MySQL(app)
-
-app.secret_key = ''
 @app.route("/")
 def index():
     return render_template ("index.html")
+
+@app.route("/inicio_sesion", methods=MethodUtil.list_ALL())
+def login():
+    
+    if request.method == "GET":
+        return render_template ("login.html")
+    if request.method == "POST": 
+        usuario = request.form["Usuario"]
+        contra = request.form["password"]
+
+        logic = UserLogic()
+        userData = logic.getUserData(usuario)
+
+        if userData is not None: 
+            session["iduser"] = userData.id
+            session["username"] = userData.usuario
+
+            if userData.password == contra: 
+    return render_template ("login.html")
+@app.route("/usuario/sesion",  methods=MethodUtil.list_ALL())
+def sesion():
+    if "username" in session: 
+        session.pop("username", None)
 
 @app.route("/usuario")
 def usuario():
@@ -22,13 +37,6 @@ def usuario():
 @app.route("/registro")
 def registro():
     return render_template("registro.html")
-
-@app.route('/inicio/registroform')
-def users():
-    cur = mysql.connection.cursor()
-    cur.execute('''SELECT user, host FROM mysql.user''')
-    rv = cur.fetchall()
-    return str(rv)
     
 @app.route("/reservaciones")
 def reservaciones():

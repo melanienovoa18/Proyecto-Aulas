@@ -1,6 +1,5 @@
 from DatabaseX import DatabaseX
 
-
 class Logic:
     def __init__(self):
         self.__databaseXObj = self.createDatabaseX()

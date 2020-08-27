@@ -1,20 +1,18 @@
 from Logic import Logic
-from userobj import UserObj
-
+from UserObj import UserObj
 
 class UserLogic(Logic):
     def __init__(self):
         super().__init__()
         self.keys = [
-            "iduser",,
+            "iduser",
             "username",
             "password",
             "email",
         ]
-
     def getUserData(self, user):
         database = self.get_databaseXObj()
-        sql = f"select * from reservas_eventos.usuario where username='{usuario}';"
+        sql = f"select * from reservas_eventos.usuario where username='{user}';"
         data = database.executeQuery(sql)
         data = self.tupleToDictionaryList(data, self.keys)
         if len(data) > 0:

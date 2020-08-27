@@ -1,12 +1,11 @@
 from Logic import Logic
-from registroobj import RegistroObj
-
+from RegistroObj import RegistroObj
 
 class UserLogic(Logic):
     def __init__(self):
         super().__init__()
         self.keys = [
-            "id",,
+            "id",
             "nombre_empresa",
             "giro",
             "nit",
