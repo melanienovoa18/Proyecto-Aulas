@@ -1,0 +1,34 @@
+{% extends 'Base.html' %}
+
+{% block head %}
+    <title>Usuarios ESEN</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+{% endblock head %}
+
+{% block content %}
+
+    <h1>Usuarios ESEN</h1>
+    <br>
+    
+    <form action="/inicio/registerform" method="POST">
+        Usuario: <br>
+        <input type="text" name="Usuario" id="idUsuario" required>
+        <br><br>
+        Correo Electronico: <br>
+        <input type="email" name="email" id="idEmail" required>
+        <br><br>
+        Contraseña: <br>
+        <input type="password" name="password" id="idPassword" required>
+        <br><br>
+        <input type="submit" value="Crear usuario">
+        <a href="/registro"><input type="button" value="Continuar el Registro"></<
+        <br><br>
+    </form>
+
+    <br><br>
+    <a href="/reservaciones"><input type="button" value="Hacer una reservacion"></a>
+    <br><br>
+    <a href="/"><input type="button" value="Inicio"></a>
+{% endblock content %}
+
