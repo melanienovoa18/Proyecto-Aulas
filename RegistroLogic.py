@@ -28,7 +28,7 @@ class UserLogic(Logic):
                 data_dic["giro"],
                 data_dic["num_registro"],
                 data_dic["email"],
-                data_dic["nomre_encargado"],
+                data_dic["nombre_encargado"],
             )
             return registerObj
         else:
