@@ -58,9 +58,21 @@ def extras():
 def tipo_pago():
     return render_template("tipo_pago.html")
 
-@app.route("/info_tarjeta")
+@app.route("/info_tarjeta", methods=MethodUtil.list_ALL())
 def info_tarjeta():
-    return redirect(url_for("info_tarjeta.html"))
+    if request.method == "GET":
+        return render_template("info_tarjeta.html")
+    if request.method == "POST":
+        numero_tarjeta = request.form["numero_tarjeta"]
+        mes_vencimiento = request.form["mes_vencimiento"]
+        annos_vencimiento = request.form["annos_vencimiento"]
+        CCV = request.form["CCV"]
+        logic = CardLogic()
+        confirmation = logic.insertCard( numero_tarjeta, mes_vencimiento, annos_vencimiento, CCV)
+        if confirmation is True:
+            return render_template("reserva_terminada.html")
+        else:
+            return redirect(url_for("info_tarjeta"), conv = confirmation)
 
 @app.route("/cancelar")
 def cancelar():
