@@ -1,18 +1,32 @@
 
 body
 {
-    background-color: #0F488C;  
-    color:#B39662;
-    text-align: center
+  background-color: #0F488C;  
+  color:#B39662;
+  text-align: center
 }
 
-
-
-.botton 
+h1
 {
-    color: #B39662;;
-    width: 100px;
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
+  font-size: 50px;
+  background-color: white;
+  padding: 15px;
+}
+
+/* Header/Logo Title */
+.header 
+{
+  padding: 0px 0;
+  text-align: left;
+  background: #ffffff;
+  color: #294a70;
+  font-size: 20px;
+  font-family: "Merriweather Sans",sans-serif;
+  
+}
+
+footer{
+  background-color: #294a70;
+  color: white;
+  font-family: Merriweather Sans,sans-serif;
 }

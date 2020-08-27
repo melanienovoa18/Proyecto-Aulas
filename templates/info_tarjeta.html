@@ -2,18 +2,23 @@
 
 {% block head %}
     <title>Informacion tarjeta </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/form.css') }}">
 {% endblock head %}
 
 {% block content %}
-    <h1>Ingresa tu tarjeta</h1>
-    
+
+<body>
+<h1>Ingresa tu tarjeta</h1>
+
+<div>
+    <h3>Por favor comple  ta los siguientes campos</h3>
+    <form>
     <form action="/inicio/registerform" method="POST">
-        Número de tarjeta <br>
-        <input id="cardnumber" autocomplete="cc-number" type="tel" pattern="[0-9]*" placeholder="1111 2222 3333 4444"
+      <h4>Número de tarjeta </h4>
+        <input type = "text" id="cardnumber" autocomplete="cc-number" type="tel" pattern="[0-9]*" placeholder="0000 0000 0000 0000"
             required />
-        <br><br>
-        Fecha de vencimiento <br>
         <br>
+      <h4>Fecha de vencimie</h4>  
         <select id="expiry-month" name="expiry-month">
             <option id="trans-label_month" value="" default="default" selected="selected">Mes</option>
             <option value="1">01</option>
@@ -29,7 +34,7 @@
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
-        <br><br>
+       
         <select id="expiry-year" name="expiry-year">
             <option id="trans-label_year" value="" default selected="selected">Año</option>
             <option value="20">20</option>
@@ -64,15 +69,18 @@
             <option value="49">49</option>
         </select>
 
-        <br><br>
-        Código de seguridad
-        <input id="security-code" autocomplete="off" type="tel" pattern="[0-9]*" placeholder="" required />
-        <br><br>
-        <input type="submit" value="Reservar" />
-        <br><br>
+        <br>
+        <h4>Código de seguridad </h4>
+        <input type = "text" id="security-code" autocomplete="off" type="tel" pattern="[0-9]*" placeholder="" required />
+        <br>
+        <h4>Nombre que aparece en la tarjeta </h4>
+        
+        <input type = "text" id="nombreTarjeta" autocomplete="off" name="nombreTarjeta" required/>
+        <input type="button" value="Reservar" />
+        
         <a href="/reserva_termianda"><input type="button" value="Finalizar reservacion"></a>
+        
         <a href="/cancelar"><input type="button" value="Cancelar"></a>
-        
-        
-        
+    </form> 
+    <br><br>
 {% endblock content %}

@@ -1,0 +1,62 @@
+body 
+{
+    margin: 0;
+    font-family: Merriweather Sans,sans-serif;
+}
+  
+  .topnav 
+  {
+    overflow: hidden;
+    background-color: #294a70;
+    font-family: Merriweather Sans,sans-serif;
+    border-bottom: 5px solid #f4a024
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Merriweather Sans",sans-serif;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #f4a024;
+    color: white;
+  }
+  
+  body {
+    font-family: Arial;
+    margin: 0;
+    color: #666666;
+  }
+  
+  /* Header/Logo Title */
+  .header {
+    padding: 0px 0;
+    text-align: left;
+    background: #ffffff;
+    color: #294a70;
+    font-size: 20px;
+    font-family: "Merriweather Sans",sans-serif;
+    
+  }
+  
+  /* Page Content */
+  .content {
+  padding:10px;
+  color: #336699;
+  }
+  
+  footer{
+    background-color: #294a70;
+    color: white;
+    font-family: Merriweather Sans,sans-serif;
+  }

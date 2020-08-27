@@ -5,20 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}{% endblock head %}
-
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/base.css') }}">
     
-     
 </head>
 
-<body><img src="{{ url_for('static', filename='logo/logo_   ESEN.png') }}" class="logo">
-<!-- style="color: rgba(185, 179, 92, 0.993); 
-background-color: rgba(5, 33, 109, 0.993); 
-text-align: center" -->
+<body>
+    <img src="{{ url_for('static', filename='logo/logo_ESEN.png') }}" class="logo">
 
 {% block content %}
 {% endblock content %}

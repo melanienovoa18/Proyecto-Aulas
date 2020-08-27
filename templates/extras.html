@@ -2,15 +2,20 @@
 
 {% block head %}
     <title>Articulos extras de reservacion ESEN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/form.css') }}">
 {% endblock head %}
 
 
 {% block content %}
 
-    <h1>Articulos extras de reservacion ESEN</h1>
-    <br>
-      <form action="" method="POST">
-        <fieldset>
+<body>
+
+<h1>Articulos extras de reservación ESEN</h1>
+
+
+<div> 
+<form action="" method="POST" >
+  <h2>Selecciona uno por uno los extras que deseas</h2>     
             <select id="selLanguage" multiple="multiple" size="6">
                 <option value="Sonido">Equipo de Sonido</option>
                 <option value="Instructor">Orador</option>
@@ -20,15 +25,11 @@
                 <option value="Aireacondicionado">Aire Acondicionado</option>
                 <option value="Otros">Otros</option>
             </select>
-            <button type="button" onclick="showChoices()">
-                Submit
-            </button>
-        </fieldset>
-    </form>
-    <div id="output">
-    </div>
-    <br>
-    <a href="/tipo_pago"><input type="button" value="Finalizar reservacion"></a>
-    <br>
+            <input type="button" value="Agregar"></a>    
+            <a href="/tipo_pago"><input type="button" value="Finalizar reservacion"></a>
     <a href="/cancelar"><input type="button" value="Cancelar"></a>
+   </form>
+</div>
+
+</body>
 {% endblock content %}

@@ -2,13 +2,20 @@
 
 {% block head %}
     <title>Reservacion completada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/form.css') }}">
 {% endblock head %}
 
 {% block content %}
-    <h1>Reservacion completada</h1>
+
+
+<body>
+
+<h1>Reservación completada</h1>
+
+<div>
     <br>
 
-    <p>Tu reservacion en la ESEN ha sido completada con exito.</p>
+    <h3>Tu reservación en la ESEN ha sido completada con éxito.</h3>
     <br>
-    <a href="/usuario"><input type="button" value="Crear cuenta"></a>
+    <a href="/"><input type="button" value="inicio"></a>
 {% endblock content %}

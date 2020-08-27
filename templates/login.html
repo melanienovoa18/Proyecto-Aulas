@@ -1,28 +1,34 @@
 {% extends 'Base.html' %}
 
 {% block head %}
-    <title>Inicio de sesion</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"
-    >
+
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+    
 {% endblock head %}
 
 {% block content %}
 
-    <h1>Usuarios ESEN</h1>
-    <br>
+<body>
+
+<h1>Inicia Sesión</h1>
+
+
+<div>
     <form action="/inicio/registerform" method="POST">
-       
-        Usuario:
-        <input type="text" name="Usuario" id="idUsuario" required>
+        <h3>Ingresa tus datos</h3>
+
+        <input type="text" id="fname" name="firstname" placeholder="Usuario">
         <br><br>
 
-        Contraseña:
-        <input type="password" name="password" id="idPassword" required>
+
+        <input type="text" id="lname" name="lastname" placeholder="Contraseña">
         <br><br>
-        <input type="submit" value="Crear usuario">
-        <br><br>
-    
+        <a href="/"><input type="button" value="Iniciar Sesión"></a>
+   
+      
+
     </form>
 
     {% endblock content %}

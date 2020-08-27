@@ -3,32 +3,31 @@
 {% block head %}
     <title>Usuarios ESEN</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/form.css') }}">
 {% endblock head %}
 
 {% block content %}
 
-    <h1>Usuarios ESEN</h1>
-    <br>
-    
-    <form action="/inicio/registerform" method="POST">
-        Usuario: 
-        <input type="text" name="Usuario" id="idUsuario" required>
-        <br><br>
-        Correo Electronico: 
-        <input type="email" name="email" id="idEmail" required>
-        <br><br>
-        Contraseña: 
-        <input type="password" name="password" id="idPassword" required>
-        <br><br>
-        <input type="submit" value="Crear usuario">
-        <a href="/registro"><input type="button" value="Continuar el Registro"></<
-        <br><br>
-    </form>
+<body>
 
-    <br><br>
+<h1>Usuarios ESEN</h1>
+
+<div>
+  <form action="/action_page.php">
+    <input type="text" id="fname" name="firstname" placeholder="Usuario">
+
+    <input type="text" id="lname" name="lastname" placeholder="Correo electrónico">
+
+    <input type="text" id="lname" name="lastname" placeholder="Contraseña">
+      </select>
+  
+    <input type="button" value="Registrarse"> 
+    <br>
     <a href="/reservaciones"><input type="button" value="Hacer una reservacion"></a>
-    <br><br>
+    <br>
     <a href="/"><input type="button" value="Inicio"></a>
+  </form>
+</div>
+
 {% endblock content %}
 

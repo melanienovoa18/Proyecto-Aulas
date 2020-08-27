@@ -2,22 +2,31 @@
 
 {% block head %}
     <title>Tipo de pago ESEN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/tp.css') }}">
 {% endblock head %}
 
 {% block content %}
-    <h1>Tipo de pago ESEN</h1>
-    <h2>Selecciona tu forma de pago</h2>
-    <form>
-        <input type="radio" id="efectivo" name="efectivo" value="efectivo">
-        <label for="efectivo">Efectivo</label><br>
-        <input type="radio" id="tarjeta" name="tarjeta" value="tarjeta">
-        <label for="tarjeta">Tarjeta</label><br>
-        <br>
-        <input type="submit" value="Aceptar" />
-        <a href="/info_tarjeta"><input type="button" value="Completa los datos de tu tarjeta"></a>
-    </form>
-    <br><br>
-    <a href="/reserva_termianda"><input type="button" value="Finalizar reservacion"></a>
-    <a href="/cancelar"><input type="button" value="Cancelar"></a>
+
+<body>
+
+<h1>Tipo de pago ESEN</h1>
+
+<div>
+    <h3>Selecciona tu forma de pago</h3>
+        <form>
+            <label for="efectivo">Efectivo</label>
+            <input type="radio" id="efectivo" name="dinero" value="efectivo"> 
+            <br>
+            <label for="tarjeta">Tarjeta</label>
+            <input type="radio" id="tarjeta" name="dinero" value="tarjeta" checked>
+            <br><br>
+            <input type="button" value="Aceptar" />
+            
+            <a href="/info_tarjeta"><input type="button" value="Completa los datos de tu tarjeta"></a>
+            <a href="/reserva_termianda"><input type="button" value="Finalizar reservacion"></a>
+            <a href="/cancelar"><input type="button" value="Cancelar"></a>
+        </form>
+    </div>
+</body>
     
 {% endblock content %}
