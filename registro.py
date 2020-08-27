@@ -1,13 +1,11 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from MethodUtil import MethodUtil
 from UserLogic import UserLogic
-<<<<<<< HEAD
 from CardLogic import CardLogic
 from CardObj import CardObj
 
-=======
->>>>>>> 988050afa56c0081c15d99f8892d7d8747969f86
 app = Flask(__name__)
+app.secret_key = "Reserv12345"
 
 @app.route("/")
 def index():
@@ -15,22 +13,25 @@ def index():
 
 @app.route("/inicio_sesion", methods=MethodUtil.list_ALL())
 def login():
-    
-    if request.method == "GET":
-        return render_template ("login.html")
-    if request.method == "POST": 
-        usuario = request.form["Usuario"]
-        contra = request.form["password"]
 
+    if request.method == "GET":
+        return render_template("login.html")
+    if request.method == "POST":
+        usuario = request.form["Usuario"]
+        contra = request.form["contra"]
+        
         logic = UserLogic()
         userData = logic.getUserData(usuario)
 
-        if userData is not None: 
-            session["iduser"] = userData.id
-            session["username"] = userData.usuario
+        if userData is not None:
+            session['user'] = {"idUser": userData[0][0], "user":userData[0][1]}
 
-            if userData.password == contra: 
-                 return redirect(url_for("login.html"))
+            if userData[0][2] == contra:
+
+                return render_template("reservaciones.html")
+            else:
+                return render_template("login.html")
+
 
 @app.route("/usuario/sesion",  methods=MethodUtil.list_ALL())
 def sesion():

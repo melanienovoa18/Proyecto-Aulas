@@ -6,7 +6,7 @@ class DatabaseX:
         self.__host = "localhost"
         self.__user = "root"
         self.__passwd = "12345"
-        self.__database = "reservas_eventos"
+        self.__database = "reservas_evento"
         self.__connection = self.createConnection()
         self.__cursor = self.createCursor()
 

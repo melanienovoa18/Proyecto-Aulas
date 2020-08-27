@@ -10,22 +10,13 @@ class UserLogic(Logic):
             "password",
             "email",
         ]
+
     def getUserData(self, user):
         database = self.get_databaseXObj()
-        sql = f"select * from reservas_eventos.usuario where username='{user}';"
+        sql = f"select * from reservas_evento.usuario where nombre_usurario='{user}' limit 1;;"
         data = database.executeQuery(sql)
-        data = self.tupleToDictionaryList(data, self.keys)
-        if len(data) > 0:
-            data_dic = data[0]
-            userObj = UserObj(
-                data_dic["iduser"],
-                data_dic["username"],
-                data_dic["password"],
-                data_dic["email"],
-            )
-            return userObj
-        else:
-            return None
+        return data
+
 
     def getUserDataByID(self, id):
         database = self.get_databaseXObj()
