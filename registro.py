@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect, url_for
 from MethodUtil import MethodUtil
 from UserLogic import UserLogic
 app = Flask(__name__)
@@ -24,7 +24,10 @@ def login():
             session["username"] = userData.usuario
 
             if userData.password == contra: 
-    return render_template ("login.html")
+
+
+                 return redirect(url_for("login.html"))
+
 @app.route("/usuario/sesion",  methods=MethodUtil.list_ALL())
 def sesion():
     if "username" in session: 
