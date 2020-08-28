@@ -2,31 +2,28 @@
 
 {% block head %}
     <title>Tipo de pago ESEN</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/tp.css') }}">
 {% endblock head %}
 
 {% block content %}
+    <h1>Tipo de pago ESEN</h1>
+    <h2>Selecciona tu forma de pago</h2>
+    <form action="/metododepago" method="post" target="_blank">
 
-<body>
-
-<h1>Tipo de pago ESEN</h1>
-
-<div>
-    <h3>Selecciona tu forma de pago</h3>
-        <form>
-            <label for="efectivo">Efectivo</label>
-            <input type="radio" id="efectivo" name="dinero" value="efectivo"> 
-            <br>
-            <label for="tarjeta">Tarjeta</label>
-            <input type="radio" id="tarjeta" name="dinero" value="tarjeta" checked>
-            <br><br>
-            <input type="button" value="Aceptar" />
-            
-            <a href="/info_tarjeta"><input type="button" value="Completa los datos de tu tarjeta"></a>
-            <a href="/reserva_termianda"><input type="button" value="Finalizar reservacion"></a>
-            <a href="/cancelar"><input type="button" value="Cancelar"></a>
-        </form>
-    </div>
-</body>
+    <p>
+  
+      Metodo de pago:<br>
+  
+      <input type="radio" name="metodo" value="efectivo"> Efectivo<br>
+  
+      <input type="radio" name="metodo" value="Tarjeta"> Tarjeta
+  
+    </p>
+  
+    <p><input type="submit" value="Enviar datos"></p>
+  
+  </form>
+    <br><br>
+    <a href="/cancelar"><input type="button" value="Cancelar"></a>
     
 {% endblock content %}
+
