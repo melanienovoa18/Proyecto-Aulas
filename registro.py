@@ -45,10 +45,37 @@ def usuario():
 @app.route("/registro")
 def registro():
     return render_template("registro.html")
+
+@app.route("/metododepago", methods = ["POST"])
+def metodo():
+    metodo  = request.form(["metodo"])
+    if metodo== 'Tarjeta':
+        return render_template("info_tarjeta.html")
+    else: 
+        return render_template("reserva_terminada.html")
     
-@app.route("/reservaciones")
+@app.route("/reservaciones", methods=MethodUtil.list_ALL())
 def reservaciones():
-    return render_template("reservaciones.html")
+    return render_template("reservaciones.html") 
+
+    """ if request.method == "GET":
+        return render_template("reservaciones.html")
+    if request.method == "POST":
+        nombreEvento = request.form["Nombre_evento"]
+        tipoEvento = request.form["Tipo_evento"]
+        fechaInicio = request.form["Fecha_inicio"]
+        fechaFinal = request.form["Fecha_final"]
+        horaInicio = request.form["Hora_inicio"]
+        horaFinal = request.form["Hora_final"]
+        fechaReservacion = request.form["Fecha_reservacion"]
+        nombreEmpresa = request.form["Nombre_empresa"]
+        nombreEncargado = request.form["Nombre_encargado"]
+        logic = ReservacionesLogic()
+        confirmation = logic.insertReservaciones( nombreEvento, tipoEvento, fechaInicio, fechaFinal, horaInicio, horaFinal, fechaReservacion,nombreEncargado, nombreEmpresa)
+        if confirmation is True:
+            return render_template("tipo_pago.html")
+        else:
+            return redirect(url_for("reservaciones"), conv = confirmation) """
 
 @app.route("/extras")
 def extras():
