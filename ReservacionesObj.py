@@ -13,17 +13,16 @@ class ReservacionesObj:
         nombre_encargado,
     ):
         self.id = id
-        self.nombreevento = nombre_evento
-        self.tipoevento = tipo_evento
-        self.fechainicio = fecha_inicio
-        self.fechafinal = fecha_final
-        self.horainicio = hora_inicio
-        self.horafinal = hora_final
-        self.fechareservacion = fecha_reservacion
-        self.nombreempresa = nombre_empresa
-        self.nombreencargado = nombre_encargado
+        self.nombreEvento = nombre_evento
+        self.tipoEvento = tipo_evento
+        self.fechaInicio = fecha_inicio
+        self.fechaFinal = fecha_final
+        self.horaInicio = hora_inicio
+        self.horaFinal = hora_final
+        self.fechaReservacion = fecha_reservacion
+        self.nombreEmpresa = nombre_empresa
+        self.nombreEncargado = nombre_encargado
 
-    def idreservaciones(self):
-        reservaciones = self.idreservaciones
-        return reservaciones
-
+    def getidReservaciones(self):
+        idReservaciones = self.id
+        return idReservaciones
