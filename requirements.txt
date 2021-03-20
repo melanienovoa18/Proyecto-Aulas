@@ -6,7 +6,7 @@ filelock==3.0.12
 Flask==1.1.2
 Flask-MySQLdb==0.2.0
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 mysql-connector==2.2.9
 mysqlclient==2.0.1
