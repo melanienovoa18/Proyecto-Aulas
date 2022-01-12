@@ -10,7 +10,7 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 mysql-connector==2.2.9
 mysqlclient==2.0.1
-pipenv==2020.6.2
+pipenv==2022.1.8
 pycodestyle==2.6.0
 six==1.15.0
 virtualenv==20.0.27
